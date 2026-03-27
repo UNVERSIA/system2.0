@@ -1,0 +1,12 @@
+streamlit>=1.32.0
+pandas>=2.0.0
+numpy>=1.24.0
+scikit-learn>=1.2.0
+joblib>=1.2.0
+matplotlib>=3.7.0
+plotly>=5.18.0
+python-dotenv
+tensorflow>=2.15.0
+pillow>=10.0.0
+openpyxl>=3.1.0
+requests>=2.31.0
