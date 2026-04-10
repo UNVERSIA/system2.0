@@ -98,7 +98,9 @@ GAME_LEVELS = [
 def get_image_base64(image_name):
     """将图片转为base64编码"""
     try:
-        image_path = Path("assets") / image_name
+        # 使用当前文件所在目录的绝对路径
+        current_dir = Path(__file__).parent
+        image_path = current_dir / "assets" / image_name
         if image_path.exists():
             with open(image_path, "rb") as f:
                 return base64.b64encode(f.read()).decode()
