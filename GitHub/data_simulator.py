@@ -20,7 +20,7 @@ class DataSimulator:
         df.set_index('日期', inplace=True)
 
         # 按月聚合 - 修正甲烷排放计算逻辑
-        monthly_df = df.resample('M').agg({
+        monthly_df = df.resample('ME').agg({
             '处理水量(m³)': 'sum',  # 月总处理水量
             '电耗(kWh)': 'sum',  # 月总电耗
             'PAC投加量(kg)': 'sum',  # 月总PAC投加量
