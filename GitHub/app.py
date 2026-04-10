@@ -1899,7 +1899,7 @@ with tab5:
                             prediction_df.set_index('日期', inplace=True)
 
                             # 按月聚合 - 使用平均值
-                            prediction_df = prediction_df.resample('M').agg({
+                            prediction_df = prediction_df.resample('ME').agg({
                                 'predicted_CO2eq': 'mean',
                                 'lower_bound': 'mean',
                                 'upper_bound': 'mean'
@@ -2106,7 +2106,7 @@ with tab5:
 
                         # 科学的趋势计算：基于历史数据预测未来变化
                         # 统一数据处理逻辑：都按日均值×30标准化处理
-                        historical_data['年月'] = historical_data['日期'].dt.to_period('M')
+                        historical_data['年月'] = historical_data['日期'].dt.to_period('ME')
 
                         # 无论原始数据是什么格式，都统一按日均值处理
                         historical_monthly_raw = historical_data.groupby('年月')['total_CO2eq'].mean()
