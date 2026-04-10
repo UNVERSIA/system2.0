@@ -1331,7 +1331,7 @@ with tab3:
             return f'color: {color}'
 
 
-        styled_account = account_df.style.applymap(color_negative_red, subset=['净排放(kgCO2eq)'])
+        styled_account = account_df.style.map(color_negative_red, subset=['净排放(kgCO2eq)'])
         st.dataframe(styled_account, height=300)
 
         # 自定义公式计算器
